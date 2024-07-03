@@ -9,12 +9,12 @@ intents.message_content = True  # 메시지 내용 접근 권한 설정
 class MyClient(discord.Client):
     # 봇이 준비되면 실행되는 이벤트 핸들러
     async def on_ready(self):
-        print(f'{self.user} has connected to Discord!')  # 봇이 Discord에 연결되었음을 출력
+        print(f'{self.user} 디스코드에 연결되었습니다')  # 봇이 Discord에 연결되었음을 출력
 
     # 메시지가 도착하면 실행되는 이벤트 핸들러
     async def on_message(self, message):
-        # 메시지 저자가 봇 자신이면 무시
-        if message.author == self.user:
+        # 메시지 저자가 봇 자신인지 확인
+        if message.author == self.user:    
             return
 
         # 메시지 내용이 '!news'이면 실행
